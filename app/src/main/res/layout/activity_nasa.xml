@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/nasadescription"
             android:text="Hello hello hello"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:typeface="normal"
             />
 

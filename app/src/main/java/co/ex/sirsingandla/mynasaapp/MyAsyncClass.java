@@ -40,6 +40,7 @@ public class MyAsyncClass extends AsyncTask<Activity, String, Activity>
     private String pubDate;
     private String description;
     private Bitmap bitmap;
+    private String bitmapurl;
     private Activity activity;
     ProgressDialog dialog;
 
@@ -64,7 +65,7 @@ public class MyAsyncClass extends AsyncTask<Activity, String, Activity>
             myparser.setInput(stream, null);
             parseXMLAndStoreIt(myparser);
 
-            //bitmap = BitmapFactory.decodeStream(stream);
+            bitmap = downloadBitmap(bitmapurl);
 
             //Log.d("BITMAP", bitmap.toString());
 
@@ -130,7 +131,6 @@ public class MyAsyncClass extends AsyncTask<Activity, String, Activity>
     public void parseXMLAndStoreIt(XmlPullParser myParser) {
         int event;
         String text=null;
-        int i = 0;
         try {
             event = myParser.getEventType();
             while (event != XmlPullParser.END_DOCUMENT) {
@@ -151,15 +151,15 @@ public class MyAsyncClass extends AsyncTask<Activity, String, Activity>
                             Log.d("description",text);
                         }
                         else if(name.equals("pubDate") ){
-
-                                pubDate = text;
-                                Log.d("Publish Date", text);
-
+                            pubDate = text;
+                            Log.d("Publish Date", text);
+                            return;
                         }
                         else if(name.equals("enclosure") ){
-                            String relType = myParser.getAttributeValue(null, "url");
-                            bitmap = downloadBitmap(relType);
-                            Log.d("URL", relType);
+                            bitmapurl = myParser.getAttributeValue(null, "url");
+                            //bitmap = downloadBitmap(relType);
+
+                            Log.d("URL", bitmapurl);
                         }
                         else
                         {
@@ -168,7 +168,7 @@ public class MyAsyncClass extends AsyncTask<Activity, String, Activity>
                         break;
                 }
                 event = myParser.next();
-                Log.d("ITEM LOOP", Integer.toString(i));
+
 
             }
 
