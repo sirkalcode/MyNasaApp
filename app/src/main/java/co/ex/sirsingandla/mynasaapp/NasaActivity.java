@@ -32,7 +32,7 @@ public class NasaActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nasa, menu);
+        getMenuInflater().inflate(R.menu.nasa, menu); 
         return true;
     }
 

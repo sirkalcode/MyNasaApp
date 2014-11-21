@@ -4,8 +4,8 @@
     <!-- From: file:/C:/Sandbox/AndroidStudioProjects/MyNasaApp/app/src/main/res/values/dimens.xml -->
     <eat-comment />
 
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">5dp</dimen>
+    <dimen name="activity_vertical_margin">5dp</dimen>
     <!-- From: file:/C:/Sandbox/AndroidStudioProjects/MyNasaApp/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
